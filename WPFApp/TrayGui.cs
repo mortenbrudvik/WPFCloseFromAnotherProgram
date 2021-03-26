@@ -29,7 +29,6 @@ namespace WPFApp
             _notifyIcon.Icon = new Icon(Application.GetResourceStream(uri).Stream);
             _notifyIcon.Visible = true;
             _notifyIcon.Text = "WPFApp";
-            
 
             _contextMenu = new ContextMenuStrip();
             _contextMenu.Items.Add(new ToolStripMenuItem("Quit", null, Quit_Click));
