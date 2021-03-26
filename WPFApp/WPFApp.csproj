@@ -4,11 +4,20 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <OutputPath>..\Debug\</OutputPath>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="mb.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="mb.ico" />
+  </ItemGroup>
 
 </Project>
