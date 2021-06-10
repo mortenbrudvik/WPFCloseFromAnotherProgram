@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:tb="http://www.hardcodet.net/taskbar"
         mc:Ignorable="d"
-        Title="WPFCloseBonanza" Height="450" Width="800">
+        Title="WPFCloseBonanza" Height="450" Width="800" 
+        WindowStyle="None"
+        AllowsTransparency="True"
+        ResizeMode="NoResize">
     <Grid>
         <tb:TaskbarIcon x:Name="taskbarIcon"
                         Visibility="Visible"
@@ -25,5 +28,17 @@
                 </ContextMenu>
             </tb:TaskbarIcon.ContextMenu>
         </tb:TaskbarIcon>
+
+        <DockPanel x:Name="RootWindow">
+            <DockPanel x:Name="TitleBar" DockPanel.Dock="Top">
+                <Button x:Name="CloseButton" Command="{Binding Path=HideWindowCommand}" DockPanel.Dock="Right"
+                        Content="&#xE106;" FontFamily="Segoe MDL2 Assets" FontSize="10" Padding="15,10" Background="Transparent" BorderBrush="Transparent"/>
+
+                <TextBlock HorizontalAlignment="Center">WPFApp</TextBlock>
+            </DockPanel>
+
+            <ContentControl Content="{Binding CurrentPage}" />
+        </DockPanel>
+
     </Grid>
 </Window>
