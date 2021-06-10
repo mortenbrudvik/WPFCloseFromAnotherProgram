@@ -20,4 +20,8 @@
     <Resource Include="mb.ico" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Hardcodet.NotifyIcon.Wpf.NetCore" Version="1.0.18" />
+  </ItemGroup>
+
 </Project>

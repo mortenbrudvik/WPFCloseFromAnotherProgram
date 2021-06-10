@@ -3,10 +3,27 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:tb="http://www.hardcodet.net/taskbar"
         mc:Ignorable="d"
-        Loaded="MainWindow_OnLoaded"
         Title="WPFCloseBonanza" Height="450" Width="800">
     <Grid>
-
+        <tb:TaskbarIcon x:Name="taskbarIcon"
+                        Visibility="Visible"
+                        ToolTipText="WPFApp"
+                        IconSource="mb.ico"
+                        LeftClickCommand="{Binding Path=ShowWindowCommand}">
+            
+            <tb:TaskbarIcon.TrayToolTip>
+                <Border Background="White" BorderBrush="Black" BorderThickness="2" CornerRadius="3" Opacity="0.9" Width="100" Height="30">
+                    <TextBlock Text="WPFApp" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </Border>
+            </tb:TaskbarIcon.TrayToolTip>
+            
+            <tb:TaskbarIcon.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Quit WPFApp" Command="{Binding Path=QuitCommand}"/>
+                </ContextMenu>
+            </tb:TaskbarIcon.ContextMenu>
+        </tb:TaskbarIcon>
     </Grid>
 </Window>
